@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: kubemq-example-queues-expiration
+  main:
+    web-application-type: none
+
+kubemq:
+  address: ${KUBEMQ_ADDRESS:localhost:50000}
+  client-id: spring-queues-expiration

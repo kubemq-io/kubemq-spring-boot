@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: kubemq-example-health-actuator
+  main:
+    # Web server required for actuator endpoints
+    web-application-type: servlet
+
+# Use 'always' for local development only. 'when-authorized' requires Spring Security.
+management:
+  endpoint:
+    health:
+      show-details: when-authorized
+  endpoints:
+    web:
+      exposure:
+        include: health,info
+
+kubemq:
+  address: ${KUBEMQ_ADDRESS:localhost:50000}
+  client-id: spring-health-actuator
+  health:
+    enabled: true

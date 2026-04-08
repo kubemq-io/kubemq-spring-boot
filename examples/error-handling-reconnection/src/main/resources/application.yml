@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: kubemq-example-error-handling-reconnection
+  main:
+    web-application-type: none
+
+kubemq:
+  address: ${KUBEMQ_ADDRESS:localhost:50000}
+  client-id: spring-error-handling-reconnection
+
+# Resilience tuning (uncomment and adjust for production):
+# kubemq.reconnect.interval: 5000
+# kubemq.reconnect.max-retries: -1
+# kubemq.keep-alive.interval: 30000

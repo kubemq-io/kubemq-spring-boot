@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: kubemq-example-template-fluent-builders
+  main:
+    web-application-type: none
+
+kubemq:
+  address: ${KUBEMQ_ADDRESS:localhost:50000}
+  client-id: spring-template-fluent-builders

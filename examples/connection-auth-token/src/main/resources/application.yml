@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: kubemq-example-connection-auth-token
+  main:
+    web-application-type: none
+
+kubemq:
+  # Broker address (override with KUBEMQ_ADDRESS env var)
+  address: ${KUBEMQ_ADDRESS:localhost:50000}
+  # Unique client identifier for this example
+  client-id: spring-connection-auth-token
+  # WARNING: Never commit auth tokens to source control. Use environment variables only: KUBEMQ_AUTH_TOKEN
+  auth-token: ${KUBEMQ_AUTH_TOKEN:}

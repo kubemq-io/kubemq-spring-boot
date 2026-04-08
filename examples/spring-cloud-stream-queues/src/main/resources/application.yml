@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: kubemq-example-spring-cloud-stream-queues
+  main:
+    web-application-type: none
+  cloud:
+    function:
+      definition: process
+    stream:
+      default-binder: kubemq
+      bindings:
+        process-in-0:
+          destination: spring-scs.queues.in
+          group: scs-queues-demo
+        process-out-0:
+          destination: spring-scs.queues.out
+      kubemq:
+        default:
+          consumer:
+            pattern: QUEUES
+          producer:
+            pattern: QUEUES
+
+kubemq:
+  address: ${KUBEMQ_ADDRESS:localhost:50000}
+  client-id: spring-scs-queues

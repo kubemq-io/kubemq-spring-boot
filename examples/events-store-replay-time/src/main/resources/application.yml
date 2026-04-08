@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: kubemq-example-events-store-replay-time
+  main:
+    web-application-type: none
+
+kubemq:
+  address: ${KUBEMQ_ADDRESS:localhost:50000}
+  client-id: spring-events-store-replay-time
+  replay:
+    # Epoch seconds — set to a past timestamp to replay from that point
+    start-time: ${KUBEMQ_REPLAY_TIME:0}

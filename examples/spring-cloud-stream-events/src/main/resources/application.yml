@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: kubemq-example-spring-cloud-stream-events
+  main:
+    web-application-type: none
+  cloud:
+    function:
+      definition: uppercase
+    stream:
+      default-binder: kubemq
+      bindings:
+        uppercase-in-0:
+          destination: spring-scs.events.in
+          group: scs-events-demo
+        uppercase-out-0:
+          destination: spring-scs.events.out
+      kubemq:
+        default:
+          consumer:
+            pattern: EVENTS
+          producer:
+            pattern: EVENTS
+
+kubemq:
+  address: ${KUBEMQ_ADDRESS:localhost:50000}
+  client-id: spring-scs-events

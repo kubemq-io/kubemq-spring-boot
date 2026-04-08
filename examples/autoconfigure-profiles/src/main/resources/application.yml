@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: kubemq-example-autoconfigure-profiles
+  main:
+    web-application-type: none
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}
+
+kubemq:
+  address: ${KUBEMQ_ADDRESS:localhost:50000}
+  client-id: spring-autoconfigure-profiles

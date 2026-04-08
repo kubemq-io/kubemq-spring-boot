@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: kubemq-example-spring-cloud-stream-events-store
+  main:
+    web-application-type: none
+  cloud:
+    function:
+      definition: transform
+    stream:
+      default-binder: kubemq
+      bindings:
+        transform-in-0:
+          destination: spring-scs.events-store.in
+          group: scs-events-store-demo
+        transform-out-0:
+          destination: spring-scs.events-store.out
+      kubemq:
+        default:
+          consumer:
+            pattern: EVENTS_STORE
+          producer:
+            pattern: EVENTS_STORE
+
+kubemq:
+  address: ${KUBEMQ_ADDRESS:localhost:50000}
+  client-id: spring-scs-events-store

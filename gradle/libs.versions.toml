@@ -1,0 +1,29 @@
+[versions]
+spring-boot = "3.2.0"
+spring-cloud = "2023.0.0"
+kubemq-java-sdk = "3.0.0"
+kubemq-kotlin-sdk = "1.0.0"
+kotlin = "2.1.20"
+kotlinx-coroutines = "1.10.2"
+grpc = "1.79.0"
+testcontainers = "1.20.0"
+awaitility = "4.3.0"
+micrometer = "1.13.0"
+
+[libraries]
+spring-boot-autoconfigure = { module = "org.springframework.boot:spring-boot-autoconfigure" }
+spring-boot-starter = { module = "org.springframework.boot:spring-boot-starter" }
+spring-boot-actuator = { module = "org.springframework.boot:spring-boot-actuator-autoconfigure" }
+spring-boot-configuration-processor = { module = "org.springframework.boot:spring-boot-configuration-processor" }
+spring-boot-test = { module = "org.springframework.boot:spring-boot-starter-test" }
+spring-cloud-stream = { module = "org.springframework.cloud:spring-cloud-stream" }
+kubemq-sdk-java = { module = "io.kubemq.sdk:kubemq-sdk-Java", version.ref = "kubemq-java-sdk" }
+kubemq-sdk-kotlin = { module = "io.kubemq.sdk:kubemq-sdk-kotlin", version.ref = "kubemq-kotlin-sdk" }
+kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "kotlinx-coroutines" }
+kotlinx-coroutines-reactor = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-reactor", version.ref = "kotlinx-coroutines" }
+micrometer-core = { module = "io.micrometer:micrometer-core" }
+micrometer-observation = { module = "io.micrometer:micrometer-observation" }
+testcontainers = { module = "org.testcontainers:testcontainers", version.ref = "testcontainers" }
+grpc-testing = { module = "io.grpc:grpc-testing", version.ref = "grpc" }
+grpc-inprocess = { module = "io.grpc:grpc-inprocess", version.ref = "grpc" }
+awaitility = { module = "org.awaitility:awaitility", version.ref = "awaitility" }

@@ -1,0 +1,6 @@
+io.kubemq.spring.boot.autoconfigure.KubeMQAutoConfiguration
+io.kubemq.spring.boot.autoconfigure.KubeMQTemplateAutoConfiguration
+io.kubemq.spring.boot.autoconfigure.KubeMQListenerAutoConfiguration
+io.kubemq.spring.boot.autoconfigure.KubeMQHealthContributorAutoConfiguration
+io.kubemq.spring.boot.autoconfigure.KubeMQMetricsAutoConfiguration
+io.kubemq.spring.boot.autoconfigure.KubeMQObservationAutoConfiguration

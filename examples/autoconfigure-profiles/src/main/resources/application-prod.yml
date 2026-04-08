@@ -1,0 +1,9 @@
+kubemq:
+  address: ${KUBEMQ_ADDRESS:prod-broker:50000}
+  client-id: spring-profiles-prod
+  tls:
+    # Placeholders: set paths via env in production (never commit key material or PEM files).
+    enabled: ${KUBEMQ_TLS_ENABLED:true}
+    ca-cert-file: ${KUBEMQ_TLS_CA_FILE:${KUBEMQ_TLS_CA_CERT:}}
+    cert-file: ${KUBEMQ_TLS_CERT_FILE:${KUBEMQ_TLS_CERT:}}
+    key-file: ${KUBEMQ_TLS_KEY_FILE:${KUBEMQ_TLS_KEY:}}

@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: kubemq-example-connection-tls
+  main:
+    web-application-type: none
+
+kubemq:
+  # Broker address (override with KUBEMQ_ADDRESS env var)
+  address: ${KUBEMQ_ADDRESS:localhost:50000}
+  # Unique client identifier for this example
+  client-id: spring-connection-tls
+  tls:
+    # Enable TLS (set to true when broker requires TLS)
+    enabled: true
+    # Path to client certificate file
+    cert-file: ${KUBEMQ_TLS_CERT:/path/to/client.crt}
+    # Path to CA certificate for server verification
+    ca-cert-file: ${KUBEMQ_TLS_CA_CERT:/path/to/ca.crt}
+    # Ensure broker certificate SAN matches the hostname in kubemq.address. Never disable hostname verification in production.

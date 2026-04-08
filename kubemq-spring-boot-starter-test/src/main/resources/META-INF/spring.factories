@@ -1,0 +1,2 @@
+org.springframework.test.context.ContextCustomizerFactory=\
+  io.kubemq.spring.boot.test.KubeMQTestContextCustomizerFactory

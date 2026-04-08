@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: kubemq-example-kotlin-coroutine-publish
+  main:
+    web-application-type: none
+
+kubemq:
+  address: ${KUBEMQ_ADDRESS:localhost:50000}
+  client-id: spring-kotlin-coroutine-publish

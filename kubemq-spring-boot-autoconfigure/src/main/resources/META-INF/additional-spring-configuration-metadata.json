@@ -1,0 +1,34 @@
+{
+  "groups": [
+    {
+      "name": "kubemq",
+      "type": "io.kubemq.spring.boot.autoconfigure.properties.KubeMQProperties",
+      "description": "KubeMQ Spring Boot starter configuration."
+    }
+  ],
+  "properties": [
+    {
+      "name": "kubemq.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Master switch for all KubeMQ auto-configuration.",
+      "defaultValue": true
+    },
+    {
+      "name": "kubemq.address",
+      "type": "java.lang.String",
+      "description": "KubeMQ server gRPC address in host:port format.",
+      "defaultValue": "localhost:50000"
+    }
+  ],
+  "hints": [
+    {
+      "name": "kubemq.address",
+      "values": [
+        {
+          "value": "localhost:50000",
+          "description": "Default local KubeMQ server."
+        }
+      ]
+    }
+  ]
+}

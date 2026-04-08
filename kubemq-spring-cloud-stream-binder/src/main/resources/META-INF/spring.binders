@@ -1,0 +1,2 @@
+kubemq:\
+io.kubemq.spring.cloud.stream.binder.config.KubeMQBinderConfiguration

@@ -1,0 +1,3 @@
+kubemq:
+  address: staging-broker:50000
+  client-id: spring-profiles-staging
