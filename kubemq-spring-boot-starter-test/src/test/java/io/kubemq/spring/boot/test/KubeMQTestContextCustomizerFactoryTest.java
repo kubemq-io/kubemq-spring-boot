@@ -20,7 +20,7 @@ class KubeMQTestContextCustomizerFactoryTest {
     @KubeMQTest
     static class AnnotatedWithKubeMQTest {}
 
-    @EmbeddedKubeMQ(image = "kubemq/kubemq-community:v2.0.0", reuse = true)
+    @EmbeddedKubeMQ(image = "europe-docker.pkg.dev/kubemq/images/kubemq-next:v2.0.0", reuse = true)
     static class AnnotatedWithEmbeddedKubeMQ {}
 
     static class NoAnnotation {}
@@ -44,7 +44,7 @@ class KubeMQTestContextCustomizerFactoryTest {
         assertThat(customizer).isNotNull();
         assertThat(customizer).isEqualTo(
                 new KubeMQTestContextCustomizer(KubeMQTestMode.EMBEDDED,
-                        "kubemq/kubemq-community:v2.0.0", true));
+                        "europe-docker.pkg.dev/kubemq/images/kubemq-next:v2.0.0", true));
     }
 
     @Test

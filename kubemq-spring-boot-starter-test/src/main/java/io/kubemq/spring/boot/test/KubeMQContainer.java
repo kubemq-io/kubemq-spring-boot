@@ -24,7 +24,7 @@ import java.time.Duration;
 public class KubeMQContainer extends GenericContainer<KubeMQContainer> {
 
     private static final DockerImageName DEFAULT_IMAGE =
-            DockerImageName.parse("kubemq/kubemq-community");
+            DockerImageName.parse("europe-docker.pkg.dev/kubemq/images/kubemq-next");
 
     private static final String DEFAULT_TAG = "latest";
 
@@ -51,7 +51,7 @@ public class KubeMQContainer extends GenericContainer<KubeMQContainer> {
         }
         LoggerFactory.getLogger(KubeMQContainer.class)
                 .warn("Using KubeMQ Docker image tag 'latest'. " +
-                      "For reproducible builds, set -D{}=kubemq/kubemq-community:<version>",
+                      "For reproducible builds, set -D{}=europe-docker.pkg.dev/kubemq/images/kubemq-next:<version>",
                       IMAGE_PROPERTY);
         return DEFAULT_IMAGE.withTag(DEFAULT_TAG);
     }

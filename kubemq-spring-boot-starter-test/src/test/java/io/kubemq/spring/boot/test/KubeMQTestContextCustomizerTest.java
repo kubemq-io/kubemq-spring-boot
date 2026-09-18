@@ -20,9 +20,9 @@ class KubeMQTestContextCustomizerTest {
     @Test
     void embeddedMode_differentImageMeansNotEqual() {
         KubeMQTestContextCustomizer c1 = new KubeMQTestContextCustomizer(
-                KubeMQTestMode.EMBEDDED, "kubemq/kubemq-community:v1.0.0", false);
+                KubeMQTestMode.EMBEDDED, "europe-docker.pkg.dev/kubemq/images/kubemq-next:v1.0.0", false);
         KubeMQTestContextCustomizer c2 = new KubeMQTestContextCustomizer(
-                KubeMQTestMode.EMBEDDED, "kubemq/kubemq-community:v2.0.0", false);
+                KubeMQTestMode.EMBEDDED, "europe-docker.pkg.dev/kubemq/images/kubemq-next:v2.0.0", false);
 
         assertThat(c1).isNotEqualTo(c2);
     }
@@ -30,9 +30,9 @@ class KubeMQTestContextCustomizerTest {
     @Test
     void reuseFlag_affectsEquality() {
         KubeMQTestContextCustomizer c1 = new KubeMQTestContextCustomizer(
-                KubeMQTestMode.EMBEDDED, "kubemq/kubemq-community:latest", false);
+                KubeMQTestMode.EMBEDDED, "europe-docker.pkg.dev/kubemq/images/kubemq-next:latest", false);
         KubeMQTestContextCustomizer c2 = new KubeMQTestContextCustomizer(
-                KubeMQTestMode.EMBEDDED, "kubemq/kubemq-community:latest", true);
+                KubeMQTestMode.EMBEDDED, "europe-docker.pkg.dev/kubemq/images/kubemq-next:latest", true);
 
         assertThat(c1).isNotEqualTo(c2);
     }
