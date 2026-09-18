@@ -12,13 +12,13 @@ class KubeMQContainerTest {
     void constructor_withCustomImage_doesNotWarn() {
         // Custom image string should be accepted without issues
         // We can't actually start the container without Docker, but we can verify construction
-        KubeMQContainer container = new KubeMQContainer("kubemq/kubemq-community:v2.5.0");
+        KubeMQContainer container = new KubeMQContainer("europe-docker.pkg.dev/kubemq/images/kubemq-next:v2.5.0");
         assertThat(container).isNotNull();
     }
 
     @Test
     void constructor_withDockerImageName_setsImage() {
-        DockerImageName imageName = DockerImageName.parse("kubemq/kubemq-community:v2.5.0");
+        DockerImageName imageName = DockerImageName.parse("europe-docker.pkg.dev/kubemq/images/kubemq-next:v2.5.0");
         KubeMQContainer container = new KubeMQContainer(imageName);
         assertThat(container).isNotNull();
     }
@@ -44,7 +44,7 @@ class KubeMQContainerTest {
         try {
             System.clearProperty(KubeMQContainer.IMAGE_PROPERTY);
             // Construct with explicit "latest" tag — same image resolveDefaultImage() would produce
-            KubeMQContainer container = new KubeMQContainer("kubemq/kubemq-community:latest");
+            KubeMQContainer container = new KubeMQContainer("europe-docker.pkg.dev/kubemq/images/kubemq-next:latest");
             assertThat(container).isNotNull();
             // The key assertion: IMAGE_PROPERTY constant matches expected value
             assertThat(KubeMQContainer.IMAGE_PROPERTY).isEqualTo("kubemq.test.image");
@@ -60,17 +60,17 @@ class KubeMQContainerTest {
         String previousValue = System.getProperty(KubeMQContainer.IMAGE_PROPERTY);
         try {
             // Set system property to a specific version
-            System.setProperty(KubeMQContainer.IMAGE_PROPERTY, "kubemq/kubemq-community:v2.7.0");
+            System.setProperty(KubeMQContainer.IMAGE_PROPERTY, "europe-docker.pkg.dev/kubemq/images/kubemq-next:v2.7.0");
 
             // Verify the system property is read correctly.
             // We cannot call the default constructor (requires Docker), but we can
             // verify the property mechanism by reading it as resolveDefaultImage would.
             String image = System.getProperty(KubeMQContainer.IMAGE_PROPERTY);
-            assertThat(image).isEqualTo("kubemq/kubemq-community:v2.7.0");
+            assertThat(image).isEqualTo("europe-docker.pkg.dev/kubemq/images/kubemq-next:v2.7.0");
 
             DockerImageName imageName = DockerImageName.parse(image);
             assertThat(imageName.getVersionPart()).isEqualTo("v2.7.0");
-            assertThat(imageName.getRepository()).isEqualTo("kubemq/kubemq-community");
+            assertThat(imageName.getRepository()).isEqualTo("kubemq/images/kubemq-next");
 
             // Verify the container can be constructed with this image
             KubeMQContainer container = new KubeMQContainer(imageName);

@@ -41,9 +41,9 @@ public @interface EmbeddedKubeMQ {
     /**
      * Docker image name for the KubeMQ community edition.
      *
-     * @return Docker image name (default: {@code "kubemq/kubemq-community:latest"})
+     * @return Docker image name (default: {@code "europe-docker.pkg.dev/kubemq/images/kubemq-next:latest"})
      */
-    String image() default "kubemq/kubemq-community:latest";
+    String image() default "europe-docker.pkg.dev/kubemq/images/kubemq-next:latest";
 
     /**
      * Whether to reuse the container across test classes (requires
